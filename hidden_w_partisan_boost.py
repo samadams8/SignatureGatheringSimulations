@@ -464,7 +464,7 @@ def plot_comparison_results(res_a, res_b, pool_size, ratio_a, ratio_b, last_data
     
     ax.axhline(y=0.5, color='grey', linestyle='--', linewidth=1, alpha=0.7, label='50% threshold')
     ax.axhline(y=1.0, color='grey', linestyle='-', alpha=0.3)
-    ax.set_title(f'Probability of Meeting Requirement by District\n(Hidden signatures, partisan efficiency, sampling best {pool_size}-days)')
+    ax.set_title(f'Probability of Meeting Requirement by District\n(Hidden signatures, partisan efficiency, sampling best {pool_size} days)')
     ax.set_xlabel('Senate District')
     ax.set_ylabel('Probability')
     ax.set_xticks(x)
@@ -491,7 +491,7 @@ def plot_comparison_results(res_a, res_b, pool_size, ratio_a, ratio_b, last_data
              label=f'Aggressive Scenario (hidden ratio={ratio_b:.2f})', edgecolor='orange')
     
     plt.axvline(x=26, color='red', linestyle='--', linewidth=2, label='Requirement (26)')
-    plt.title(f'Distribution of Districts Passing\n(Hidden signatures, partisan efficiency, sampling best {pool_size}-days)')
+    plt.title(f'Distribution of Districts Passing\n(Hidden signatures, partisan efficiency, sampling best {pool_size} days)')
     plt.xlabel('Number of Districts Passed')
     plt.ylabel('Relative frequency (%)')
     plt.legend()
@@ -524,7 +524,7 @@ def plot_comparison_results(res_a, res_b, pool_size, ratio_a, ratio_b, last_data
                 label=f'Requirement ({STATEWIDE_REQ:,})')
     plt.xlabel('Total Verified Signatures')
     plt.ylabel('Relative frequency (%)')
-    plt.title(f'Final Statewide Totals\n(Hidden signatures, partisan efficiency, sampling best {pool_size}-days)')
+    plt.title(f'Final Statewide Totals\n(Hidden signatures, partisan efficiency, sampling best {pool_size} days)')
     plt.legend(loc='upper left')
     plt.grid(axis='y', alpha=0.3)
     plt.gca().xaxis.set_major_formatter(plt.FuncFormatter(lambda x, p: format(int(x), ',')))

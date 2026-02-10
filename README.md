@@ -2,13 +2,13 @@
 
 Written and tested in Python 3.10.12.
 
-## What this script does
+## What these scripts do
 
-Runs a simulation of signature gathering by district using the provided CSV inputs, producing summary outputs for different partisan-lean scenarios.
+Models possible outcomes of signature gathering initiative based on historical data. In the model created to approximate a best-case scenario for the sponsors (hidden with partisan boost), it also includes partisan voting data and some user defined assumptions about the relationship between validated signatures and unverified backlog.
 
-## Monte Carlo methodology
+## Bootstrapping methodology
 
-- Builds daily signature gains from historical data, then repeatedly samples days from an "optimistic" pool (top-performing days by a deficit-weighted score).
+- Builds daily signature gains from historical data, then repeatedly samples days (sometimes from an optimistic pool; top-performing days by a deficit-weighted score).
 - Applies a partisan efficiency adjustment by comparing observed district progress to partisan-lean expectations, boosting underperforming districts.
 - Models hidden signatures via a shadow ratio derived from percentile gaps in daily throughput, with a sandbagging window and an age-based release on the target date.
 - Runs many trials (default 100,000) to understand what the distribution of possibilities are.
@@ -43,7 +43,7 @@ Execute the simulation script from the repo root:
 python hidden_w_partisan_boost.py
 ```
 
-## Charts
+## Charts of best case scenario for sponsors
 
 ![Daily verification rates](Hidden_w_PartisanBoost/00_daily_verification_rates.png)
 ![Partisan diagnostic](Hidden_w_PartisanBoost/01_partisan_diagnostic.png)
