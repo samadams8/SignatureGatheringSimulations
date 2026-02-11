@@ -23,7 +23,7 @@ Models possible outcomes of signature gathering initiative based on historical d
     - For historical portion, a default window of the most recent 30 days accumulate hidden signatures.
     - For future portion, simulated days before the end of signature collection (2/15) also accumulate hidden signatures.
     - Two hidden signature scenarios (conservative and aggressive) are implemented by default, based on difference between a baseline and a peak throughput derived from quantile rates in the observed data.
-- Plots saved to the [Hidden_w_PartisanBoost](Hidden_w_PartisanBoost) folder.
+- Plots saved to the [Hidden_w_PartisanBoost](Hidden_w_PartisanBoost) folder and 
 
 ## Install
 
@@ -43,7 +43,17 @@ Execute the simulation script from the repo root:
 python hidden_w_partisan_boost.py
 ```
 
-## Charts of best case scenario for sponsors
+# Figures
+
+## Bootstrap using historical performance only
+Samples only from historical performance data
+
+![District probabilities comparison](HistoricalBootstrap/01_district_probabilities.png)
+![Districts passed distribution](HistoricalBootstrap/02_districts_distribution.png)
+![Statewide totals distribution](HistoricalBootstrap/03_statewide_distribution.png)
+
+## Modified bootstrap Best case scenario for sponsors
+Samples historical performance boosted using some assumptions as described above.
 
 ![Daily verification rates](Hidden_w_PartisanBoost/00_daily_verification_rates.png)
 ![Partisan diagnostic](Hidden_w_PartisanBoost/01_partisan_diagnostic.png)

@@ -24,7 +24,7 @@ CAMPAIGN_BD = CustomBusinessDay(calendar=CampaignHolidayCalendar())
 # ==========================================
 # FIGURES DIRECTORY SETUP
 # ==========================================
-FIGURES_DIR = "HistoricalBootrap"
+FIGURES_DIR = "HistoricalBootstrap"
 if not os.path.exists(FIGURES_DIR):
     os.makedirs(FIGURES_DIR)
     print(f"Created {FIGURES_DIR} directory")
@@ -38,7 +38,7 @@ N_SIMULATIONS = 100000
 
 # OPTIMISM SETTING
 # 0.75 = Use top 25% of days
-OPTIMISM_THRESHOLD = 0.5
+OPTIMISM_THRESHOLD = 0.75
 
 # ==========================================
 # HARDCODED REQUIREMENTS (2026)
@@ -216,7 +216,7 @@ def plot_all_scenarios(summary_std, counts_std, totals_std, summary_opt, counts_
     ax1.axhline(y=1.0, color='grey', linestyle='-', alpha=0.3)
     ax1.set_ylabel('Probability')
     ax1.set_xlabel('Senate District')
-    ax1.set_title(f'Probability of Meeting Requirement by District\n(Historical bootstrap, sampling {standard_days} days vs. best {optimistic_days} days)')
+    ax1.set_title(f'Probability of Meeting Requirement by District\n(Historical bootstrap, sampling all {standard_days} days vs. best {optimistic_days} days)')
     ax1.set_xticks(x)
     ax1.set_ylim(0, 1.05)
     ax1.legend(loc='lower right')
@@ -243,7 +243,7 @@ def plot_all_scenarios(summary_std, counts_std, totals_std, summary_opt, counts_
     ax2.axvline(x=26, color='red', linestyle='--', linewidth=2, label='Requirement (26)')
     ax2.set_xlabel('Number of Districts Passed')
     ax2.set_ylabel('Relative frequency (%)')
-    ax2.set_title(f'Distribution of Districts Passing\n(Historical bootstrap, sampling {standard_days} days vs. best {optimistic_days} days)')
+    ax2.set_title(f'Distribution of Districts Passing\n(Historical bootstrap, sampling all {standard_days} days vs. best {optimistic_days} days)')
     ax2.legend()
     ax2.grid(axis='y', alpha=0.3)
     plt.tight_layout()
@@ -274,7 +274,7 @@ def plot_all_scenarios(summary_std, counts_std, totals_std, summary_opt, counts_
     
     ax3.set_xlabel('Total Verified Signatures')
     ax3.set_ylabel('Relative frequency (%)')
-    ax3.set_title(f'Final Statewide Totals\n(Historical bootstrap, sampling {standard_days} days vs. best {optimistic_days} days)')
+    ax3.set_title(f'Final Statewide Totals\n(Historical bootstrap, sampling all {standard_days} days vs. best {optimistic_days} days)')
     ax3.legend(loc='upper left')
     ax3.grid(axis='y', alpha=0.3)
     # Format x-axis with commas
