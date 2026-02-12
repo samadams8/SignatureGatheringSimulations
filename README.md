@@ -1,7 +1,5 @@
 # Signature Gathering Simulations
 
-Written and tested in Python 3.10.12.
-
 ## What these scripts do
 
 Models possible outcomes of signature gathering initiative based on historical data. In the model created to approximate a best-case scenario for the sponsors (hidden with partisan boost), it also includes partisan voting data and some user defined assumptions about the relationship between validated signatures and unverified backlog.
@@ -23,9 +21,10 @@ Models possible outcomes of signature gathering initiative based on historical d
     - For historical portion, a default window of the most recent 30 days accumulate hidden signatures.
     - For future portion, simulated days before the end of signature collection (2/15) also accumulate hidden signatures.
     - Two hidden signature scenarios (conservative and aggressive) are implemented by default, based on difference between a baseline and a peak throughput derived from quantile rates in the observed data.
-- Plots saved to the [Hidden_w_PartisanBoost](Hidden_w_PartisanBoost) folder and 
 
 ## Install
+
+Scripts were written and tested in Python 3.10.12.
 
 Create and activate a virtual environment, then install dependencies:
 
@@ -52,7 +51,7 @@ Samples only from historical performance data
 ![Districts passed distribution](HistoricalBootstrap/02_districts_distribution.png)
 ![Statewide totals distribution](HistoricalBootstrap/03_statewide_distribution.png)
 
-## Modified bootstrap Best case scenario for sponsors
+## Modified bootstrap - best case scenario for sponsors
 Samples historical performance boosted using some assumptions as described above.
 
 ![Daily verification rates](Hidden_w_PartisanBoost/00_daily_verification_rates.png)
