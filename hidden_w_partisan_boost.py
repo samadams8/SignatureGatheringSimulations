@@ -19,7 +19,7 @@ TARGET_DATE = "2026-03-08"
 HIDE_DEADLINE = "2026-02-15"  # After this date, no new signatures can be hidden
 N_SIMULATIONS = 100000
 BLOCK_SIZE = 5
-SIGN_AGE_LIMIT = 16  # Number of days signatures are held back
+SIGN_AGE_LIMIT = 15  # Number of days signatures are held back
                      # Tuned to give 200k-220k total in aggressive scenario
 
 # OPTIMISM SETTING
